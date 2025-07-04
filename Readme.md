@@ -33,7 +33,7 @@ cargo watch -q -c -x "test test_create_ok -- --nocapture"
 ## Database
 
 ```shell
-docker run --rm --name pg -p 5432:5432 -e POSTGRES_PASSWORD=welcome postgres:15
+docker run --rm --name pg -p 5432:5432 -e POSTGRES_PASSWORD=... postgres:15
 ```
 
 start a psql terminal for postgres:

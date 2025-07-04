@@ -1,0 +1,37 @@
+[package]
+name = "web-server"
+version.workspace = true
+edition.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+# App Libs
+lib-utils = { path = "../../libs/lib-utils" }
+lib-rpc = { path = "../../libs/lib-rpc" }
+lib-auth = { path = "../../libs/lib-auth" }
+lib-core = { path = "../../libs/lib-core" }
+# Async
+tokio = { version = "1", features = ["full"] }
+async-trait = "0.1"
+# Json
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+serde_with = "3"
+# Web
+axum = { version = "0.8", features = ["macros"] }
+tower-http = { version = "0.6", features = ["fs"] }
+tower-cookies = "0.11"
+# Tracing
+tracing = "0.1"
+tracing-subscriber = { version = "0.3", features = ["env-filter"] }
+# Others
+uuid = { version = "1", features = ["v4","fast-rng",] }
+strum_macros = "0.27"
+derive_more = { version = "2", features = ["from"] }
+
+[dev-dependencies]
+anyhow = "1"
+httpc-test = "0.1"
+serial_test = "3.2"

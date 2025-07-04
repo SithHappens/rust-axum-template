@@ -1,0 +1,12 @@
+[package]
+name = "gen-key"
+version.workspace = true
+edition.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+lib-utils = { path = "../../libs/lib-utils"}
+rand = "0.9"
+anyhow = "1"

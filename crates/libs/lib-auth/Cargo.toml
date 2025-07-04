@@ -1,0 +1,25 @@
+[package]
+name = "lib-auth"
+version.workspace = true
+edition.workspace = true
+
+[lib]
+doctest = false
+
+[lints]
+workspace = true
+
+[dependencies]
+lib-utils = { path = "../../libs/lib-utils" }
+serde = { version = "1", features = ["derive"] }
+# Hashing (pwd scheme 01 & token)
+hmac = "0.12"
+sha2 = "0.10"
+# Hashing (pwd scheme 02)
+argon2 = { version = "0.5", features = ["std"] }
+derive_more = { version = "2.0", features = ["from"] }
+uuid = { version = "1.17.0", features = ["v4", "fast-rng"] }
+lazy-regex = "3.4"
+
+[dev-dependencies]
+anyhow = "1.0"
