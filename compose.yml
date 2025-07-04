@@ -1,0 +1,19 @@
+name: rust-axum
+
+services:
+  db:
+    image: postgres:17.5-bookworm
+    restart: unless-stopped
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_HOSTNAME=localhost
+      - POSTGRES_PORT=5432
+      - POSTGRES_DB=postgres
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=welcome
+    ports:
+      - "5432:5432"
+
+volumes:
+  pgdata:

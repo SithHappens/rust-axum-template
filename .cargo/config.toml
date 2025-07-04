@@ -1,0 +1,22 @@
+# Environment variables for all cargo commands
+[env]
+
+# Scope down tracing, to filter external lib tracing
+RUST_LOG = "rust_axum=debug"
+
+## Service Environment Variables
+# For cargo commands only. For deployed env, should be managed by container.
+
+## Config Map
+
+# relative to Cargo.toml
+# in deployed images probably use the absolute path
+SERVICE_WEB_FOLDER = "web-folder/"
+
+# Keys and passwords below are for localhost dev only, i.e. encryption not needed
+SERVICE_DB_URL = "postgres://app_user:dev_only_pwd@localhost/app_db"
+
+SERVICE_PWD_KEY = "6PCfBNrwH9VTGZjy-gxErL5f74v_n85QqYeozdvZQfTh_gbtK-0HOvStkvzdmmOXHHWfpB4l3VETb5S1gL52PQ"
+
+SERVICE_TOKEN_KEY = "7jAL3iwCx-g-hZTIwYkzhTpQ6PsFzU4Oyz-e70OYFMNVB4AKbieiWjSW1i4RIqoTrB2YiOxr8OBupxNBvlowhQ"
+SERVICE_TOKEN_DURATION_SEC = "1800"                                                                          # 30 minutes
